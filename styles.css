@@ -8,7 +8,6 @@ body {
     padding: 0 0px;
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -19,16 +18,14 @@ body {
     position: relative;
 }
 
-/* Logo */
 .logo {
     font-size: 24px;
     font-weight: bold;
     color: #FF1493;
 }
 
-/* Menu Toggle */
 .menu-toggle {
-    display: none; /* Hide by default */
+    display: none;
     background: none;
     border: none;
     color: white;
@@ -36,15 +33,13 @@ body {
     cursor: pointer;
 }
 
-/* Nav Menu */
 .nav-menu {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Display flex by default */
+    display: flex;
 }
 
-/* Nav Menu Items */
 .nav-menu li {
     margin-left: 20px;
 }
@@ -60,43 +55,32 @@ body {
     color: #FF1493;
 }
 
-/* Responsive Styles */
 @media (max-width: 900px) {
     .menu-toggle {
-        display: block; /* Display the button on small screens */
+        display: block;
     }
 
     .nav-menu {
-        display: none; /* Hide menu by default on small screens */
-        flex-direction: column; /* Stack items vertically */
-        position: absolute; /* Position above content */
-        top: 50px; /* Adjust for navbar */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
         left: 0;
         right: 0;
         background-color: black;
-        z-index: 1000; /* Ensure it's on top */
+        z-index: 1000;
         padding: 10px 0;
     }
 
     .nav-menu.show {
-        display: flex; /* Show when toggle is clicked */
+        display: flex;
     }
 
     .nav-menu li {
-        margin: 10px 0; /* Space between items */
-        text-align: center; /* Center items */
+        margin: 10px 0;
+        text-align: center;
     }
 }
-
-
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #FF1493;
-}
-
-
 
 .hero-image img {
     width: 100%;
@@ -260,7 +244,6 @@ body {
     border-top: 1px solid #FF69B4;
 }
 
-/* Responsive Styles */
 @media (max-width: 900px) {
     .navbar {
         flex-direction: column;
@@ -341,7 +324,6 @@ body {
     }
 }
 
-/* Further Responsive Styles for Mobile Devices */
 @media (max-width: 600px) {
     .navbar ul {
         flex-direction: column;
@@ -384,7 +366,6 @@ body {
     }
 }
 
-/* Popup styles */
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -417,7 +398,6 @@ body {
     cursor: pointer;
 }
 
-/* Hover effect for images */
 img[data-popup] {
     transition: transform 0.3s ease;
 }
