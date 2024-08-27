@@ -290,3 +290,46 @@ body {
         font-size: 12px;
     }
 }
+
+/* Popup styles */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.popup-content img {
+    width: 100%;
+    height: auto;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hover effect for images */
+img[data-popup] {
+    transition: transform 0.3s ease;
+}
+
+img[data-popup]:hover {
+    transform: scale(1.1); /* Slightly enlarges the image on hover */
+    cursor: pointer; /* Changes the cursor to a pointer */
+}
