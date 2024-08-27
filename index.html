@@ -30,12 +30,28 @@
     <section class="top-destinations">
         <h2>Top Destinations</h2>
         <div class="destination-grid">
-            <div class="destination-item"><p>Sri Lanka</p><img src="img/srilanka.jpg" alt="Sri Lanka"></div>
-            <div class="destination-item"><p>Rome</p><img src="img/rome.jpg" alt="Rome"></div>
-            <div class="destination-item"><p>Maldives</p><img src="img/maldives.jpg" alt="Maldives"></div>
-            <div class="destination-item"><p>Switzerland</p><img src="img/switzerland.jpg" alt="Switzerland"></div>
-            <div class="destination-item"><p>Thailand</p><img src="img/thailand.jpg" alt="Thailand"></div>
-        </div>
+    <div class="destination-item">
+        <p>Sri Lanka</p>
+        <img src="img/srilanka.jpg" alt="Sri Lanka" data-popup>
+    </div>
+    <div class="destination-item">
+        <p>Rome</p>
+        <img src="img/rome.jpg" alt="Rome" data-popup>
+    </div>
+    <div class="destination-item">
+        <p>Maldives</p>
+        <img src="img/maldives.jpg" alt="Maldives" data-popup>
+    </div>
+    <div class="destination-item">
+        <p>Switzerland</p>
+        <img src="img/switzerland.jpg" alt="Switzerland" data-popup>
+    </div>
+    <div class="destination-item">
+        <p>Thailand</p>
+        <img src="img/thailand.jpg" alt="Thailand" data-popup>
+    </div>
+	</div>
+
     </section>
 
     <section class="team-leads">
@@ -143,5 +159,71 @@
 		</div>
     </footer>
 	</div>
+	
+	<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const popupOverlay = document.createElement("div");
+    popupOverlay.className = "popup-overlay";
+    const popupContent = document.createElement("div");
+    popupContent.className = "popup-content";
+    const closeButton = document.createElement("span");
+    closeButton.className = "close-popup";
+    closeButton.innerHTML = "&times;";
+    popupContent.appendChild(closeButton);
+    popupOverlay.appendChild(popupContent);
+    document.body.appendChild(popupOverlay);
+
+    const images = document.querySelectorAll("img[data-popup]");
+    images.forEach(image => {
+        image.addEventListener("click", function() {
+            const img = document.createElement("img");
+            img.src = this.src;
+            popupContent.insertBefore(img, closeButton);
+            popupOverlay.style.display = "flex";
+        });
+    });
+
+    closeButton.addEventListener("click", function() {
+        popupOverlay.style.display = "none";
+        popupContent.querySelector("img").remove();
+    });
+
+    popupOverlay.addEventListener("click", function(event) {
+        if (event.target === popupOverlay) {
+            popupOverlay.style.display = "none";
+            popupContent.querySelector("img").remove();
+        }
+    });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll("img[data-popup]");
+
+    images.forEach(image => {
+        image.style.position = "relative"; // Set position relative for smooth transition
+
+        image.addEventListener("mousemove", function (e) {
+            const rect = this.getBoundingClientRect(); // Get image size and position
+            const x = e.clientX - rect.left; // Mouse position within the image
+            const y = e.clientY - rect.top;
+
+            const moveX = ((x / rect.width) - 0.5) * 20; // Calculate movement in X direction
+            const moveY = ((y / rect.height) - 0.5) * 20; // Calculate movement in Y direction
+
+            this.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`; // Apply transform
+        });
+
+        image.addEventListener("mouseleave", function () {
+            this.style.transform = "translate(0, 0) scale(1)"; // Reset transform when mouse leaves
+        });
+    });
+});
+</script>
+
+
+	
+	
 </body>
 </html>
