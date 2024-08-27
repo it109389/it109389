@@ -5,11 +5,10 @@ body {
 }
 
 .container {
-    /*max-width: 1200px;*/
-    /*margin: 0 auto;*/
     padding: 0 0px;
 }
 
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -17,7 +16,79 @@ body {
     background-color: black;
     padding: 15px;
     color: white;
+    position: relative;
 }
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FF1493;
+}
+
+/* Menu Toggle */
+.menu-toggle {
+    display: none; /* Hide by default */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Nav Menu */
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display flex by default */
+}
+
+/* Nav Menu Items */
+.nav-menu li {
+    margin-left: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #FF1493;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: block; /* Display the button on small screens */
+    }
+
+    .nav-menu {
+        display: none; /* Hide menu by default on small screens */
+        flex-direction: column; /* Stack items vertically */
+        position: absolute; /* Position above content */
+        top: 50px; /* Adjust for navbar */
+        left: 0;
+        right: 0;
+        background-color: black;
+        z-index: 1000; /* Ensure it's on top */
+        padding: 10px 0;
+    }
+
+    .nav-menu.show {
+        display: flex; /* Show when toggle is clicked */
+    }
+
+    .nav-menu li {
+        margin: 10px 0; /* Space between items */
+        text-align: center; /* Center items */
+    }
+}
+
+
 
 .logo {
     font-size: 24px;
@@ -25,32 +96,7 @@ body {
     color: #FF1493;
 }
 
-.navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
 
-.navbar ul li {
-    margin-left: 20px;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-.navbar ul li a:hover {
-    color: #FF1493;
-}
-
-.navbar ul li a.active,
-.navbar ul li a:focus {
-    color: #FF69B4;
-}
 
 .hero-image img {
     width: 100%;
@@ -81,15 +127,20 @@ body {
 .destination-item img {
     width: 210px;
     height: auto;
-	border-radius: 20px;
+    border-radius: 20px;
 }
 
-.team-leads, .statistics, .testimonials, .contact-form {
-    padding: 1px 100px;
+.team-leads,
+.statistics,
+.testimonials,
+.contact-form {
+    padding: 20px 15px;
     text-align: center;
 }
 
-.team-leads h2, .testimonials h2, .contact-form h2 {
+.team-leads h2,
+.testimonials h2,
+.contact-form h2 {
     color: #FF69B4;
 }
 
@@ -102,8 +153,6 @@ body {
 .testimonial-grid {
     display: flex;
     justify-content: space-around;
-	
-    /*flex-wrap: wrap;*/
 }
 
 .team-member {
@@ -112,14 +161,14 @@ body {
 
 .testimonial {
     margin: 20px;
-	border-radius: 10px;
+    border-radius: 10px;
     border: 1px solid #ccc;
 }
 
 .team-member img {
     width: 250px;
     height: 400px;
-	border-radius: 10px;
+    border-radius: 10px;
     object-fit: cover;
 }
 
@@ -167,9 +216,10 @@ body {
 
 .footer-links {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     background-color: #333;
-    padding: 50px 0;
+    padding: 30px 15px;
     color: white;
 }
 
@@ -204,10 +254,10 @@ body {
 .footer-copyright {
     text-align: center;
     padding: 20px 0;
-    background-color:black; /* Matches the footer background */
-    color: white; /* Matches the pink theme */
+    background-color: black;
+    color: white;
     font-size: 14px;
-    border-top: 1px solid #FF69B4; /* Optional: Add a top border to separate the copyright section */
+    border-top: 1px solid #FF69B4;
 }
 
 /* Responsive Styles */
@@ -291,6 +341,49 @@ body {
     }
 }
 
+/* Further Responsive Styles for Mobile Devices */
+@media (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .destination-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .destination-item {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .team-grid,
+    .testimonial-grid,
+    .statistics {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .statistics .stat-item {
+        width: 80%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .team-member,
+    .testimonial {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+
+    .contact-form form {
+        width: 100%;
+    }
+}
+
 /* Popup styles */
 .popup-overlay {
     position: fixed;
@@ -330,6 +423,6 @@ img[data-popup] {
 }
 
 img[data-popup]:hover {
-    transform: scale(1.1); /* Slightly enlarges the image on hover */
-    cursor: pointer; /* Changes the cursor to a pointer */
+    transform: scale(1.1);
+    cursor: pointer;
 }
