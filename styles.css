@@ -33,6 +33,7 @@ body {
     cursor: pointer;
 }
 
+
 .nav-menu {
     list-style: none;
     margin: 0;
@@ -49,22 +50,25 @@ body {
     color: white;
     font-size: 16px;
     transition: color 0.3s;
+	margin-left:30px;
 }
 
 .nav-menu a:hover {
     color: #FF1493;
 }
 
+/* Media query for responsive styling */
 @media (max-width: 900px) {
     .menu-toggle {
-        display: block;
+        display: block; /* Show the menu toggle button */
+		justify-content: space-between;
     }
 
     .nav-menu {
-        display: none;
+        display: none; /* Hide the nav menu by default */
         flex-direction: column;
         position: absolute;
-        top: 50px;
+        top: 60px; /* Adjust to position the menu correctly */
         left: 0;
         right: 0;
         background-color: black;
@@ -73,19 +77,32 @@ body {
     }
 
     .nav-menu.show {
-        display: flex;
+        display: flex; /* Show the nav menu when 'show' class is added */
     }
 
     .nav-menu li {
         margin: 10px 0;
         text-align: center;
     }
+
+    .navbar {
+        justify-content: space-between; /* Align logo to the left and toggle button to the right */
+        flex-direction: row; /* Ensure the navbar items remain in a row */
+        width: 100%; /* Make the navbar full width */
+    }
+
+   
 }
 
 .hero-image img {
     width: 100%;
     height: auto;
 }
+
+/* Other sections remain unchanged... */
+
+/* ... Continue with your CSS styles for other sections ... */
+
 
 .top-destinations {
     padding: 50px 10px;
@@ -160,13 +177,22 @@ body {
     display: flex;
     justify-content: space-around;
     background-color: #022b59;
+    color: #FF69B4;
+    padding: 10px 0;
+}
+
+.stats-item {
+    text-align: center;
+    font-size: 24px;
     color: white;
-    padding: 50px 0;
+    margin-top: 1px;
 }
 
 .statistics .stat-item {
     text-align: center;
-    font-size: 24px;
+    font-size: 50px;
+    margin-top: 15px;
+    margin-bottom: 1px;
 }
 
 .contact-form form {
@@ -246,7 +272,7 @@ body {
 
 @media (max-width: 900px) {
     .navbar {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
     }
 
@@ -329,6 +355,7 @@ body {
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
+		margin-top: 1px;
     }
 
     .destination-grid {
