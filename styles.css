@@ -59,9 +59,17 @@ body {
 
 /* Media query for responsive styling */
 @media (max-width: 900px) {
+    .navbar {
+        justify-content: space-between; /* Aligns the logo to the left and the menu toggle button to the right */
+        flex-direction: row;
+        width: 100%; /* Makes the navbar full width */
+    }
+
     .menu-toggle {
         display: block; /* Show the menu toggle button */
-		justify-content: space-between;
+        margin-left: auto; /* Pushes the toggle button to the right */
+        position: relative; 
+		margin-right: 24px;
     }
 
     .nav-menu {
@@ -84,15 +92,8 @@ body {
         margin: 10px 0;
         text-align: center;
     }
-
-    .navbar {
-        justify-content: space-between; /* Align logo to the left and toggle button to the right */
-        flex-direction: row; /* Ensure the navbar items remain in a row */
-        width: 100%; /* Make the navbar full width */
-    }
-
-   
 }
+
 
 .hero-image img {
     width: 100%;
