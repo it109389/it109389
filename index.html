@@ -23,7 +23,7 @@
 					<li><a href="#">Portfolio</a></li>
 					<li><a href="#">Contacts</a></li>
 				</ul>
-			</nav>
+			</nav> 
     </div>
     </div>
         <div class="hero-image">
@@ -78,10 +78,20 @@
     </section>
 
     <section class="statistics">
-        <div class="stat-item">250k + <br> Happy Clients</div>
-        <div class="stat-item">800 <br> Weekly Reservations</div>
-        <div class="stat-item">150 <br> Travel Partners</div>
-        <div class="stat-item">15 <br> Branches</div>
+        <div>
+		  <p class="stat-item">250k + </p> <p class="stats-item">Happy Clients</p>
+		</div>
+		
+        <div>
+		  <p class="stat-item">800 </p> <p class="stats-item"> Weekly Reservations </p>
+		</div>
+		
+        <div>
+		<p class="stat-item">150 </p><p class="stats-item"> Travel Partners</p>
+		</div>
+		
+        <div><p class="stat-item">15 </p><p class="stats-item"> Branches</p>
+		</div>
     </section>
 
     <section class="testimonials">
@@ -106,7 +116,7 @@
     </section>
 
     <section class="contact-form">
-        <h2></h2>
+        <h2>CONTACT US</h2>
         <form action="#">
             <input type="text" name="first-name" placeholder="First Name">
             <input type="text" name="last-name" placeholder="Last Name">
@@ -225,6 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const menuToggle = document.querySelector('.menu-toggle');
@@ -232,6 +243,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         menuToggle.addEventListener('click', function () {
             navMenu.classList.toggle('show'); // Toggle the menu visibility
+        });
+
+        // Hide the menu when an item is clicked
+        navMenu.addEventListener('click', function () {
+            navMenu.classList.remove('show'); // Hide the menu
         });
     });
 </script>
